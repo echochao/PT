@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#main {
+				height: 300px;
+				width: 300px;
+				border: 2px solid black;
+				margin: 0 auto;
+				margin-top: 200px;
+				position: relative;
+			}
+			
+			#main div {
+				height: 100px;
+				width: 100px;
+				float: left;
+				background: url(img/bg_1.jpg) no-repeat;
+			}
+			
+			#main .img_1 {
+				background-position: 0 0;
+			}
+			
+			#main .img_2 {
+				background-position: -100px 0;
+			}
+			
+			#main .img_3 {
+				background-position: -200px 0;
+			}
+			
+			#main .img_4 {
+				background-position: 0 -100px;
+			}
+			
+			#main .img_5 {
+				background-position: -100px -100px;
+			}
+			
+			#main .img_6 {
+				background-position: -200px -100px;
+			}
+			
+			#main .img_7 {
+				background-position: 0 -200px;
+			}
+			
+			#main .img_8 {
+				background-position: -100px -200px;
+			}
+			
+			#main .img_9 {
+				background-position: -200px -200px;
+			}
+			
+			#main .block {
+				visibility: hidden;
+			}
+			.btn{
+				margin-top: 50px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="main">
+			<div class="img_1"></div>
+			<div class="img_2"></div>
+			<div class="img_3"></div>
+			<div class="img_4"></div>
+			<div class="img_5"></div>
+			<div class="img_6"></div>
+			<div class="img_7"></div>
+			<div class="img_8"></div>
+			<div class="img_9"></div>
+		</div>
+		<div class="btn">
+			<button id="btn1">开始</button>
+			<button id="btn2">换图</button>
+		</div>
+	</body>
+<script>
+	var btn1=document.getElementById("btn1");
+	var btn2=document.getElementById("btn1");
+	var main=document.getElementById("main");
+	var img=main.getElementsByTagName("div");
+
+function getNum(n,length) {
+
+	var nums = new Array;
+
+	for(var i = 0; i < length; i++) {
+
+		nums[i] = i;
+
+	};
+
+	var numss = new Array;
+
+	for(var i = 0; i < n; i++) {
+
+		var r = parseInt(Math.random() * nums.length);
+
+		numss[i] = nums[r];
+
+		nums.splice(r, 1);
+
+	};
+
+	return numss;
+
+};
+
+btn1.onclick=function(){
+	var ran=getNum(9,img.length);
+		img[ran[0]].className="img_1";
+		img[ran[1]].className="img_2";
+		img[ran[2]].className="img_3";
+		img[ran[3]].className="img_4";
+		img[ran[4]].className="img_5";
+		img[ran[5]].className="img_6";
+		img[ran[6]].className="img_7";
+		img[ran[7]].className="img_8";
+		img[ran[8]].className="block";	
+		
+	for(var i=0;i<img.length;i++){
+			img[i].index=i;
+	};
+document.onkeydown=function(ev){
+	var ev=ev||event;
+	var bl=main.getElementsByClassName("block")[0];
+	var n=bl.index;
+	if(	img[0].className=="img_1"&&
+		img[1].className=="img_2"&&
+		img[2].className=="img_3"&&
+		img[3].className=="img_4"&&
+		img[4].className=="img_5"&&
+		img[5].className=="img_6"&&
+		img[6].className=="img_7"&&
+		img[7].className=="img_8"&&
+		img[8].className=="block"){
+			alert("哈哈！")
+		};
+	if(ev.keyCode==38){
+		if(n<6){
+			var name=img[n+3].className;
+			img[n+3].className="block";
+			img[n].className=name;
+		};
+	};
+	if(ev.keyCode==40){
+		if(n>2){
+			var name=img[n-3].className;
+			img[n-3].className="block";
+			img[n].className=name;
+		};
+	};
+	if(ev.keyCode==37){
+		if(n!=2 && n!=5 && n!=8){
+			var name=img[n+1].className;
+			img[n+1].className="block";
+			img[n].className=name;
+		};
+	};
+	if(ev.keyCode==39){
+		if(n!=0 && n!=3 && n!=6){
+			var name=img[n-1].className;
+			img[n-1].className="block";
+			img[n].className=name;
+		};
+	};
+};
+};
+</script>
+</html>
