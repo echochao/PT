@@ -1,0 +1,79 @@
+body{
+}
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "microsoft yahei";
+}
+#main {
+	height: 300px;
+	width: 300px;
+	border: 2px solid black;
+	margin: 0 auto;
+	margin-top: 50px;
+	position: relative;
+	overflow: hidden;
+}
+.bg img{
+	display: none;
+	width: 300px;
+	height: 300px;
+}
+.img div{
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+#main .noactive{
+	display: none;
+}
+#main .active{
+	display: block;
+}
+#main .block {
+	visibility: hidden;
+}
+.btn{
+	text-align: center;
+}
+.btn button{
+	height: 50px;
+	width: 100px;
+	text-align: center;
+	margin: 25px;
+}
+#main .img_1 {
+	background-position: 0 0;
+}
+
+#main .img_2 {
+	background-position: -100px 0;
+}
+
+#main .img_3 {
+	background-position: -200px 0;
+}
+
+#main .img_4 {
+	background-position: 0 -100px;
+}
+
+#main .img_5 {
+	background-position: -100px -100px;
+}
+
+#main .img_6 {
+	background-position: -200px -100px;
+}
+
+#main .img_7 {
+	background-position: 0 -200px;
+}
+
+#main .img_8 {
+	background-position: -100px -200px;
+}
+
+#main .img_9 {
+	background-position: -200px -200px;
+}
