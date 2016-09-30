@@ -1,5 +1,7 @@
 body{
 	width: 100%;
+	position: fixed;
+	background-color: #ffef5e;
 }
 *{
 	padding: 0;
