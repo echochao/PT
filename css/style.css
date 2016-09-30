@@ -42,8 +42,11 @@ body{
 .btn button{
 	height: 50px;
 	width: 100px;
+	border-radius: 5px;
+	background-color: cornflowerblue;
 	text-align: center;
-	margin: 25px;
+	margin: 20px 10px;
+	color: white;
 }
 #main .img_1 {
 	background-position: 0 0;
