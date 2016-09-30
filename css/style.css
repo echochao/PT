@@ -1,7 +1,7 @@
 body{
 	width: 100%;
-	position: fixed;
 	background-color: #ffef5e;
+	padding: 10px 0;
 }
 *{
 	padding: 0;
@@ -12,14 +12,14 @@ body{
 	height: 300px;
 	width: 300px;
 	border: 2px solid black;
-	margin: 0 auto;
-	margin-top: 50px;
 	position: relative;
+	margin: 0 auto;
 	overflow: hidden;
+	margin-top: 50px;
 }
 .bg img{
 	display: none;
-	width: 100%;
+	width: 300px;
 	height: 300px;
 }
 .img div{
@@ -38,14 +38,15 @@ body{
 }
 .btn{
 	text-align: center;
+	margin: 10px 0;
 }
 .btn button{
 	height: 50px;
 	width: 100px;
+	margin: 10px 25px;
 	border-radius: 5px;
 	background-color: cornflowerblue;
 	text-align: center;
-	margin: 20px 10px;
 	color: white;
 }
 #main .img_1 {
